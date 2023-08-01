@@ -3,9 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="e057b6a6-185f-4ab2-97f0-0825bf6444f5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/foodcommunity/community/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/foodcommunity/community/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/foodcommunity/community/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/foodcommunity/community/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/foodcommunity/community/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/foodcommunity/community/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/foodcommunity/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/foodcommunity/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/foodcommunity/foodcommunity/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/foodcommunity/foodcommunity/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

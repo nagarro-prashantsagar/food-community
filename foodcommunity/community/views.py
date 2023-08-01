@@ -103,8 +103,33 @@ class JoinCommunity(APIView):
             return Response({'error': 'Community not found.'}, status=status.HTTP_404_NOT_FOUND)
 
         user = request.user
-        if user in community.members.all():
+        if user in community.users.all():
             return Response({'message': 'You are already a member of this community.'}, status=status.HTTP_200_OK)
 
-        community.members.add(user)
+        community.users.add(user)
         return Response({'message': 'Joined the community successfully.'}, status=status.HTTP_200_OK)
+
+class SearchCommunity(APIView):
+    def get(self, request):
+        query = request.GET.get('q', '')
+
+        if query:
+            communities = Community.objects.filter(title__icontains=query)
+            serializer = CommunitySerializer(communities, many=True)
+            return Response(serializer.data)
+        else:
+            return Response({'error': 'Please provide a search query.'}, status=status.HTTP_400_BAD_REQUEST)
+
+
+
+class CommunityMembers(APIView):
+    def get(self, request, community_id):
+        try:
+            community = Community.objects.get(pk=community_id)
+        except Community.DoesNotExist:
+            return Response({'error': 'Community not found.'}, status=status.HTTP_404_NOT_FOUND)
+
+        members = community.users.all()
+        member_ids = [member.id for member in members]
+        return Response(member_ids, status=status.HTTP_200_OK)
+

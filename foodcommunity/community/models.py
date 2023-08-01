@@ -26,13 +26,6 @@ class Community(models.Model):
     def __str__(self):
         return self.title
 
-
-# class ChatRoom(models.Model):
-#     name = models.CharField(max_length=100)
-#
-#     def __str__(self):
-#         return self.name
-
 class communitieschat(models.Model):
     room = models.ForeignKey(Topic, on_delete=models.CASCADE)
     sender = models.CharField(max_length=100)
@@ -41,3 +34,4 @@ class communitieschat(models.Model):
 
     def __str__(self):
         return f"{self.room.name} - {self.sender}: {self.message}"
+

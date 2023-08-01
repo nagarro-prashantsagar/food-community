@@ -1,7 +1,9 @@
 from django.urls import path
-
-from . import views
+from .views import *
 
 urlpatterns = [
-    path("", views.index, name="index"),
+    path('communities/', CommunityList.as_view(), name='community-list'),
+    path('communities/<int:pk>/', CommunityDetail.as_view(), name='community-detail'),
+    path('communitieshat/', ChatRoomList.as_view(), name='chatroom-list'),
+    path('communitieshat/<int:room_id>/messages/', MessageList.as_view(), name='message-list'),
 ]

@@ -3,16 +3,9 @@ from django.db import models
 from django.contrib.auth.models import User
 
 
-class Topic(models.Model):
-    name = models.CharField(max_length=200)
-
-    def __str__(self):
-        return self.name
-
-
 class Community(models.Model):
     admin = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
-    topic = models.ForeignKey('Topic', on_delete=models.SET_NULL, null=True)
+    topic = models.CharField( max_length=200, null=True)
     title = models.CharField(max_length=200)
     description = models.TextField(null=True, blank=True)
     users = models.ManyToManyField(
@@ -24,14 +17,14 @@ class Community(models.Model):
         ordering = ['-updated', '-created']
 
     def __str__(self):
-        return self.title
+        return self.topic
 
 class communitieschat(models.Model):
-    room = models.ForeignKey(Topic, on_delete=models.CASCADE)
-    sender = models.CharField(max_length=100)
+    topic = models.ForeignKey(Community, on_delete=models.SET_NULL, null=True)
+    sender = models.ForeignKey(User, on_delete=models.CASCADE)
     message = models.TextField()
     timestamp = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f"{self.room.name} - {self.sender}: {self.message}"
+        return f"{self.topic} - {self.sender}: {self.message}"
 

@@ -46,4 +46,5 @@ urlpatterns = [
          name='schema-redoc'),
     path('admin/', admin.site.urls),
     path('community/', include('community.urls')),
+    path('chat/', include('chat.urls')),
 ]

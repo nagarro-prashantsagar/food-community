@@ -12,7 +12,12 @@ class MessageSerializer(serializers.ModelSerializer):
         model = communitieschat
         fields = '__all__'
 
-class TopicSerializer(serializers.ModelSerializer):
+class ChatSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Topic
+        model = communitieschat
         fields = '__all__'
+
+class communitieschatSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = communitieschat
+        fields = ['id', 'topic', 'sender', 'message', 'timestamp']

@@ -1,6 +1,5 @@
 
-W
-'foodcommunity/foodcommunity/settings.py,9\3\93f64d9ba52a1cfef7ed4fbc3ae35429606af37d
-:
-
-.gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
+P
+ foodcommunity/community/tests.py,1\4\14c72690a4cb69b66cf6ebb04a39e9312251d68b
+O
+foodcommunity/community/apps.py,f\d\fd0133a907d187002c88bff3f59119d2700ad069

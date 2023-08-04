@@ -1,7 +1,8 @@
 # models.py
-from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, Group
+from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, Group, Permission
 from django.db import models
 from .managers import CustomUserManager
+from django.utils.translation import gettext as _
 
 
 class CustomUser(AbstractBaseUser, PermissionsMixin):
@@ -11,7 +12,7 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
     date_joined = models.DateTimeField(auto_now_add=True)
-
+    user_permissions = models.ManyToManyField(Permission, verbose_name=_('user permissions'), blank=True, related_name='custom_user_permissions')
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = []
 

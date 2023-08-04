@@ -1,5 +1,6 @@
 from rest_framework import serializers
 from .models import CustomUser
+from django import forms
 
 
 class CustomUserSerializer(serializers.ModelSerializer):
@@ -10,5 +11,10 @@ class CustomUserSerializer(serializers.ModelSerializer):
 
 
 class CustomUserLoginSerializer(serializers.Serializer):
+    email = serializers.EmailField()
+    password = serializers.CharField(write_only=True)
+
+
+class AdminLoginSerializer(serializers.Serializer):
     email = serializers.EmailField()
     password = serializers.CharField(write_only=True)

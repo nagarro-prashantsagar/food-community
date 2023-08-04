@@ -47,5 +47,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('community/', include('community.urls')),
     path('custom-admin/', include('customadmin.urls')),
+    path('chef/', include('chef.urls')),
 
 ]

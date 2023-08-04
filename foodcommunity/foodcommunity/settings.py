@@ -58,11 +58,12 @@ MIDDLEWARE = [
 
 
 AUTH_USER_MODEL = 'customadmin.CustomUser'
+CSRF_COOKIE_SAMESITE = 'Lax'
 
-AUTHENTICATION_BACKENDS = [
-    # 'django.contrib.auth.backends.ModelBackend',  # Default Django authentication backend
-    'customadmin.authentication.CustomUserEmailBackend',   # Custom authentication backend
-]
+# AUTHENTICATION_BACKENDS = [
+#     # 'django.contrib.auth.backends.ModelBackend',  # Default Django authentication backend
+#     'customadmin.authentication.CustomUserEmailBackend',   # Custom authentication backend
+# ]
 
 ROOT_URLCONF = 'foodcommunity.urls'
 

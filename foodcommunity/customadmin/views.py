@@ -15,6 +15,7 @@ class CustomUserLogoutView(View):
         logout(request)
         return JsonResponse({'message': 'Logout successful'})
 
+
 # @csrf_exempt
 class CustomUserLoginView(APIView):
     def post(self, request):
@@ -23,11 +24,10 @@ class CustomUserLoginView(APIView):
         tempuser = get_object_or_404(CustomUser, email=email)
         if (tempuser.email == email and tempuser.password == password):
             login(request, tempuser)
-            print(tempuser)
+            # print(tempuser)
             return Response({'message': 'Login successful'}, status=status.HTTP_200_OK)
         else:
             return Response({'error': 'Invalid login credentials'}, status=status.HTTP_401_UNAUTHORIZED)
-
 
 
 class CustomUserSignupView(APIView):

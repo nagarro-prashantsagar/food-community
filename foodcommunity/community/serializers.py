@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from .models import *
 
+
 class CommunitySerializer(serializers.ModelSerializer):
     class Meta:
         model = Community
@@ -12,12 +13,20 @@ class MessageSerializer(serializers.ModelSerializer):
         model = communitieschat
         fields = '__all__'
 
+
 class ChatSerializer(serializers.ModelSerializer):
     class Meta:
         model = communitieschat
         fields = '__all__'
 
+
 class communitieschatSerializer(serializers.ModelSerializer):
     class Meta:
         model = communitieschat
         fields = ['id', 'topic', 'sender', 'message', 'timestamp']
+
+
+class CommunityListSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Community
+        fields = ['name', 'description']

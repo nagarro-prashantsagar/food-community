@@ -39,17 +39,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'community',
     'rest_framework',
+    'rest_framework.authtoken',
     'rest_framework_swagger',
     'drf_yasg',
-    'chat',
     'chef',
+    'customadmin',
+
 ]
-# REST_FRAMEWORK = {
-#     'DEFAULT_AUTHENTICATION_CLASSES': (
-#         'rest_framework.authentication.SessionAuthentication',
-#         'rest_framework.authentication.BasicAuthentication',
-#     ),
-# }
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -61,6 +57,14 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+
+AUTH_USER_MODEL = 'customadmin.CustomUser'
+CSRF_COOKIE_SAMESITE = 'Lax'
+
+# AUTHENTICATION_BACKENDS = [
+#     # 'django.contrib.auth.backends.ModelBackend',  # Default Django authentication backend
+#     'customadmin.authentication.CustomUserEmailBackend',   # Custom authentication backend
+# ]
 
 ROOT_URLCONF = 'foodcommunity.urls'
 
@@ -84,12 +88,18 @@ WSGI_APPLICATION = 'foodcommunity.wsgi.application'
 
 
 #restframework
+# REST_FRAMEWORK = {
+#     'DEFAULT_PAGINATION_CLASS':
+#     'rest_framework.pagination.PageNumberPagination',
+#     'PAGE_SIZE': 100,
+#     'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema'
+# }
 REST_FRAMEWORK = {
-    'DEFAULT_PAGINATION_CLASS':
-    'rest_framework.pagination.PageNumberPagination',
-    'PAGE_SIZE': 100,
-    'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema'
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+    ],
 }
+
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases

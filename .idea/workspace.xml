@@ -2,19 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e057b6a6-185f-4ab2-97f0-0825bf6444f5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/foodcommunity/chat/serializers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/foodcommunity/chat/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/foodcommunity/chat/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/foodcommunity/chat/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/foodcommunity/community/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/foodcommunity/community/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/foodcommunity/community/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/foodcommunity/community/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/foodcommunity/community/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/foodcommunity/community/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/foodcommunity/chef/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/foodcommunity/chef/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/foodcommunity/chef/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/foodcommunity/chef/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/foodcommunity/chef/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/foodcommunity/chef/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/foodcommunity/chef/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/foodcommunity/chef/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/foodcommunity/chef/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/foodcommunity/chef/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/foodcommunity/community/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/foodcommunity/community/serializers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/foodcommunity/community/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/foodcommunity/community/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/foodcommunity/community/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/foodcommunity/community/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/foodcommunity/db.sqlite3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/foodcommunity/customadmin/authentication.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/foodcommunity/customadmin/managers.py" beforeDir="false" afterPath="$PROJECT_DIR$/foodcommunity/customadmin/managers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/foodcommunity/customadmin/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/foodcommunity/customadmin/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/foodcommunity/customadmin/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/foodcommunity/customadmin/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/foodcommunity/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/foodcommunity/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/foodcommunity/foodcommunity/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/foodcommunity/foodcommunity/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/foodcommunity/foodcommunity/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/foodcommunity/foodcommunity/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

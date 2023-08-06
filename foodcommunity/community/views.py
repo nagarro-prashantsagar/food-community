@@ -1,3 +1,4 @@
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
@@ -205,3 +206,13 @@ class StartChatWithCommunity(APIView):
         chat = communitieschat.objects.create(topic=community, sender=sender, message=message)
         serializer = communitieschatSerializer(chat)
         return Response(serializer.data, status=status.HTTP_201_CREATED)
+
+
+class UserCommunityList(APIView):
+    # permission_classes = [IsAuthenticated]
+
+    def get(self, request):
+        user = request.user
+        communities = Community.objects.filter(user=user)
+        serializer = CommunityListSerializer(communities, many=True)
+        return Response(serializer.data)

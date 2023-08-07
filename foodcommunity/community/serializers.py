@@ -10,19 +10,19 @@ class CommunitySerializer(serializers.ModelSerializer):
 
 class MessageSerializer(serializers.ModelSerializer):
     class Meta:
-        model = communitieschat
+        model = communitiesChat
         fields = '__all__'
 
 
 class ChatSerializer(serializers.ModelSerializer):
     class Meta:
-        model = communitieschat
+        model = communitiesChat
         fields = '__all__'
 
 
 class communitieschatSerializer(serializers.ModelSerializer):
     class Meta:
-        model = communitieschat
+        model = communitiesChat
         fields = ['id', 'topic', 'sender', 'message', 'timestamp']
 
 

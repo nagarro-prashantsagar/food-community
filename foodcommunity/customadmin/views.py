@@ -4,10 +4,12 @@ from django.shortcuts import get_object_or_404
 from django.views import View
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework import status
+from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from .forms import AdminLoginForm
 from .serializers import *
+from .backends import CustomUserAuthenticationBackend
 
 
 class CustomUserLogoutView(View):
@@ -18,16 +20,35 @@ class CustomUserLogoutView(View):
 
 # @csrf_exempt
 class CustomUserLoginView(APIView):
+    permission_classes = [AllowAny]
+
     def post(self, request):
         email = request.data.get('email')
         password = request.data.get('password')
-        tempuser = get_object_or_404(CustomUser, email=email)
-        if (tempuser.email == email and tempuser.password == password):
-            login(request, tempuser)
-            # print(tempuser)
-            return Response({'message': 'Login successful'}, status=status.HTTP_200_OK)
-        else:
-            return Response({'error': 'Invalid login credentials'}, status=status.HTTP_401_UNAUTHORIZED)
+
+        # Use the custom authentication backend to authenticate custom users
+        user_backend = CustomUserAuthenticationBackend()
+        user = user_backend.authenticate(request, username=email, password=password)
+
+        if user is not None:
+            # Use the default authenticate() function with the custom backend
+            authenticated_user = authenticate(request, username=email, password=password,
+                                              backend='your_app_name.backends.CustomUserAuthenticationBackend')
+            if authenticated_user is not None:
+                login(request, authenticated_user)
+                return Response('Login successful!', status=status.HTTP_200_OK)
+
+        return Response('Invalid credentials', status=status.HTTP_401_UNAUTHORIZED)
+    # def post(self, request):
+    #     email = request.data.get('email')
+    #     password = request.data.get('password')
+    #     tempuser = get_object_or_404(CustomUser, email=email)
+    #     if (tempuser.email == email and tempuser.password == password):
+    #         login(request, tempuser)
+    #         # print(tempuser)
+    #         return Response({'message': 'Login successful'}, status=status.HTTP_200_OK)
+    #     else:
+    #         return Response({'error': 'Invalid login credentials'}, status=status.HTTP_401_UNAUTHORIZED)
 
 
 class CustomUserSignupView(APIView):

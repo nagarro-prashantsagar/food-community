@@ -1,16 +1,14 @@
 from django.http import JsonResponse
-from django.shortcuts import get_object_or_404
 from django.views.generic import DetailView
-from rest_framework import status, generics, permissions
+from rest_framework import status
 from rest_framework.generics import ListAPIView
-from rest_framework.status import HTTP_200_OK, HTTP_401_UNAUTHORIZED
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.permissions import AllowAny, IsAuthenticated
-from django.contrib.auth import authenticate, login, logout
-from rest_framework.authtoken.models import Token
-from .models import *
+from django.contrib.auth import login, logout
 from .serializers import *
+from .backends import *
+
 
 class SignupView(APIView):
     permission_classes = [AllowAny]
@@ -26,47 +24,38 @@ class SignupView(APIView):
 class LoginView(APIView):
     permission_classes = [AllowAny]
 
-    # def post(self, request):
-    #     email = request.data.get('email')
-    #     password = request.data.get('password')
-    #     print(email,password)
-    #
-    #     chef = authenticate(request, username=email, password=password)
-    #     print(chef)
-    #     if chef is not None:
-    #         token, _ = Token.objects.get_or_create(user=chef)
-    #         return Response({'token': token.key}, status=status.HTTP_200_OK)
-    #
-    #     return Response({'error': 'Invalid credentials'}, status=status.HTTP_401_UNAUTHORIZED)
-
     def post(self, request):
         email = request.data.get('email')
         password = request.data.get('password')
-        chef = get_object_or_404(Chef, email=email)
-        print(email,password)
-        # chef = authenticate(request, email=email, password=password)
-        if chef.email == email and chef.password == password:
-            print(email,password)
+
+        # Use the custom authentication backend to authenticate chefs
+        chef_backend = ChefAuthenticationBackend()
+        chef = chef_backend.authenticate(request, username=email, password=password)
+
         if chef is not None:
-            login(request, chef)
-            print(chef)
-            # login(request, chef)
-            token, _ = Token.objects.get_or_create(chef=chef)
-            chef.is_online = True
-            chef.save()
-            return Response({'token': token.key, 'message': 'Login successful!'}, status=status.HTTP_200_OK)
+            # Use the default authentication backend to avoid the multiple backend issue
+            login(request, chef, backend='django.contrib.auth.backends.ModelBackend')
+            return Response('Login successful!', status=status.HTTP_200_OK)
         return Response('Invalid credentials', status=status.HTTP_401_UNAUTHORIZED)
+
+
+
 
 class LogoutView(APIView):
     permission_classes = [IsAuthenticated]
+
     def post(self, request):
         logout(request)
-        chef = request.user
-        # Set the is_online status to False when the chef logs out
-        chef.is_online = False
-        chef.save()
-        logout(request)
-        return Response('Logged out successfully!', status=HTTP_200_OK)
+        return Response('Logged out successfully!', status=status.HTTP_200_OK)
+    #
+    # def post(self, request):
+    #     logout(request)
+    #     chef = request.user
+    #     # Set the is_online status to False when the chef logs out
+    #     chef.is_online = False
+    #     chef.save()
+    #     logout(request)
+    #     return Response('Logged out successfully!', status=HTTP_200_OK)
 
 
 class ChefDetailView(DetailView):
@@ -113,27 +102,27 @@ class OnlineChefListView(ListAPIView):
     queryset = Chef.objects.filter(is_online=True)
     serializer_class = ChefSerializer
 
-class ChatCreateView(generics.CreateAPIView):
-    serializer_class = ChatSerializer
-    permission_classes = [permissions.IsAuthenticated]
-
-    def perform_create(self, serializer):
-        chef_id = self.kwargs.get('chef_id')
-        chef = get_object_or_404(User, id=chef_id)
-
-        serializer.save(user=self.request.user, chef=chef)
-
-        # Create a welcome message from the CustomUser to the Chef
-        ChatMessage.objects.create(chat=serializer.instance, sender=self.request.user, content="Hello Chef!")
-
-        # Create a welcome message from the Chef to the CustomUser
-        ChatMessage.objects.create(chat=serializer.instance, sender=chef, content="Hello! How can I assist you?")
-
-
-class RecentChatList(generics.ListAPIView):
-    serializer_class = ChatSerializer
-    permission_classes = [permissions.IsAuthenticated]
-
-    def get_queryset(self):
-        chef_id = self.kwargs.get('chef_id')
-        return Chat.objects.filter(chef__id=chef_id).order_by('-timestamp')[:10]
+# class ChatCreateView(generics.CreateAPIView):
+#     serializer_class = ChatSerializer
+#     permission_classes = [permissions.IsAuthenticated]
+#
+#     def perform_create(self, serializer):
+#         chef_id = self.kwargs.get('chef_id')
+#         chef = get_object_or_404(User, id=chef_id)
+#
+#         serializer.save(user=self.request.user, chef=chef)
+#
+#         # Create a welcome message from the CustomUser to the Chef
+#         ChatMessage.objects.create(chat=serializer.instance, sender=self.request.user, content="Hello Chef!")
+#
+#         # Create a welcome message from the Chef to the CustomUser
+#         ChatMessage.objects.create(chat=serializer.instance, sender=chef, content="Hello! How can I assist you?")
+#
+#
+# class RecentChatList(generics.ListAPIView):
+#     serializer_class = ChatSerializer
+#     permission_classes = [permissions.IsAuthenticated]
+#
+#     def get_queryset(self):
+#         chef_id = self.kwargs.get('chef_id')
+#         return Chat.objects.filter(chef__id=chef_id).order_by('-timestamp')[:10]

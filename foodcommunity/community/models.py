@@ -21,7 +21,7 @@ class Community(models.Model):
         return self.topic
 
 
-class communitieschat(models.Model):
+class communitiesChat(models.Model):
     topic = models.ForeignKey(Community, on_delete=models.SET_NULL, null=True)
     sender = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     message = models.TextField()

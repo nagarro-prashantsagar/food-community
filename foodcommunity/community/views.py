@@ -104,7 +104,7 @@ class CommunityDetail(APIView):
 
 class MessageList(APIView):
     def get(self, request, room_id):
-        messages = communitieschat.objects.filter(room_id=room_id)
+        messages = communitiesChat.objects.filter(room_id=room_id)
         serializer = MessageSerializer(messages, many=True)
         return Response(serializer.data)
 
@@ -178,7 +178,7 @@ class CommunityChat(APIView):
             return Response({'error': 'Community not found.'}, status=status.HTTP_404_NOT_FOUND)
 
         # Retrieve all chat messages related to the community
-        chats = communitieschat.objects.filter(topic=community)
+        chats = communitiesChat.objects.filter(topic=community)
 
         chat_data = [
             {
@@ -203,7 +203,7 @@ class StartChatWithCommunity(APIView):
         sender = request.user
         message = request.data.get('message', '')
 
-        chat = communitieschat.objects.create(topic=community, sender=sender, message=message)
+        chat = communitiesChat.objects.create(topic=community, sender=sender, message=message)
         serializer = communitieschatSerializer(chat)
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 

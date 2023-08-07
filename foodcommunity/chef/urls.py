@@ -10,7 +10,7 @@ urlpatterns = [
     path('chef/<int:pk>/update/', views.ChefUpdateView.as_view(), name='chef_update'),
 
     path('chef/online/', views.OnlineChefListView.as_view(), name='online_chef_list'),
-    path('chats/create/<int:chef_id>/', views.ChatCreateView.as_view(), name='chat-create'),
+    # path('chats/create/<int:chef_id>/', views.ChatCreateView.as_view(), name='chat-create'),
 
-    path('chats/recent/<int:chef_id>/', views.RecentChatList.as_view(), name='recent-chat-list'),
+    # path('chats/recent/<int:chef_id>/', views.RecentChatList.as_view(), name='recent-chat-list'),
 ]

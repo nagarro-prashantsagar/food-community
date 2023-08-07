@@ -2,20 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e057b6a6-185f-4ab2-97f0-0825bf6444f5" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/foodcommunity/chef/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/foodcommunity/chef/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/foodcommunity/chef/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/foodcommunity/chef/migrations/0002_alter_chef_experience_years.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/foodcommunity/chef/migrations/0003_alter_chef_experience_years.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/foodcommunity/chef/migrations/0004_chef_short_info.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/foodcommunity/chef/migrations/0005_chef_is_online.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/foodcommunity/chef/migrations/0006_chat.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/foodcommunity/chef/migrations/0007_chatmessage.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/foodcommunity/chef/migrations/0008_rename_content_chatmessage_message.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/foodcommunity/chef/migrations/0009_alter_chef_options.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/foodcommunity/chef/migrations/0010_alter_chef_email_alter_chef_first_name_and_more.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/foodcommunity/chef/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/foodcommunity/chef/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/foodcommunity/chef/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/foodcommunity/chef/serializers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/foodcommunity/chef/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/foodcommunity/chef/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/foodcommunity/chef/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/foodcommunity/chef/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/foodcommunity/community/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/foodcommunity/community/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/foodcommunity/community/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/foodcommunity/community/migrations/0002_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/foodcommunity/community/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/foodcommunity/community/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/foodcommunity/community/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/foodcommunity/community/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/foodcommunity/community/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/foodcommunity/community/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/foodcommunity/community/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/foodcommunity/community/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/foodcommunity/customadmin/authentication.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/foodcommunity/customadmin/managers.py" beforeDir="false" afterPath="$PROJECT_DIR$/foodcommunity/customadmin/managers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/foodcommunity/customadmin/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/foodcommunity/customadmin/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/foodcommunity/customadmin/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/foodcommunity/customadmin/migrations/0002_alter_customuser_user_permissions.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/foodcommunity/customadmin/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/foodcommunity/customadmin/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/foodcommunity/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/foodcommunity/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/foodcommunity/db.sqlite3" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/foodcommunity/foodcommunity/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/foodcommunity/foodcommunity/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -41,14 +54,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/prashantsagar/Desktop/MHD&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/prashantsagar/OneDrive - Nagarro/Desktop/MHD/foodcommunity/chef",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\prashantsagar\OneDrive - Nagarro\Desktop\MHD\foodcommunity\chef" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\prashantsagar\OneDrive - Nagarro\Desktop\MHD\foodcommunity\customadmin" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

@@ -3,3 +3,31 @@ P
  foodcommunity/community/tests.py,1\4\14c72690a4cb69b66cf6ebb04a39e9312251d68b
 O
 foodcommunity/community/apps.py,f\d\fd0133a907d187002c88bff3f59119d2700ad069
+@
+requirements.txt,1\9\19359a61ae2446b51b549167b014da2fcf265768
+P
+ foodcommunity/community/forms.py,c\d\cde456fb855db8e9e2963f23a5166fb54b8fbdc3
+R
+"foodcommunity/customadmin/admin.py,e\c\eca1a0c219beae903e0dacb64657035125b6e7c7
+X
+(foodcommunity/customadmin/serializers.py,2\6\261f08cd3801029069e954be8c4ad3cc79b613fa
+R
+"foodcommunity/customadmin/forms.py,7\7\771fc5978b42dd04c72ce0efba11b335685b9906
+Q
+!foodcommunity/customadmin/urls.py,9\c\9c7c55805af75602c063c0ea18719ccd01a77f7f
+S
+#foodcommunity/foodcommunity/urls.py,6\d\6d822c1d80d4f715e8644c2b85c6eb63af03008b
+G
+foodcommunity/manage.py,3\a\3a8cee969e90ed932e524d550d159210418ccf1d
+U
+%foodcommunity/customadmin/managers.py,4\7\471399e543860a040d19871684b07b82dcce0374
+P
+ foodcommunity/community/admin.py,0\2\02b943b0cfbc2222adbf3465950010b312031362
+V
+&foodcommunity/community/serializers.py,2\e\2e46d4a2b616472d1fb82a6ca1026b48f3c01cd5
+P
+ foodcommunity/community/views.py,a\3\a35b030180cccc6417e9bfc6144349edd1dd41d9
+Q
+!foodcommunity/community/models.py,e\6\e6fa445d70388c104b081c6ec62fae5a7b56a8c8
+S
+#foodcommunity/customadmin/models.py,3\3\33b3c38de48a31b64297b1bd20f3460ee9badcb2
